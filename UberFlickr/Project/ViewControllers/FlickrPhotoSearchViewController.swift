@@ -65,7 +65,8 @@ class FlickrPhotoSearchViewController: UIViewController {
 //MARK:- UICollectionViewDelegate methods
 extension FlickrPhotoSearchViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if viewModel.numberOfItems(in: indexPath.section) == indexPath.row - 1 && viewModel.shouldFetchNextPage() {
+        print("--- displaying cell number = \(indexPath.item)")
+        if viewModel.numberOfItems(in: indexPath.section)-1 == indexPath.item && viewModel.shouldFetchNextPage() {
             viewModel.fetchNextPage()
         }
         guard let _model = viewModel.model(at: indexPath) else {
@@ -101,6 +102,7 @@ extension FlickrPhotoSearchViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        print("--- cell number = \(indexPath.item)")
         let cell = collectionView.dequeue(cell: FlickrPhotoCell.self, for: indexPath)!
         return cell
     }
@@ -118,7 +120,7 @@ extension FlickrPhotoSearchViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let totalPadding = (Constants.kItemInRow + 1) * Constants.kCollectionViewInsets.left
         let totalWidth = UIScreen.main.bounds.width - totalPadding
-        let cellWidth = totalWidth / Constants.kItemInRow
+        let cellWidth = floor(totalWidth / Constants.kItemInRow)
         return CGSize(width: cellWidth, height: cellWidth)
     }
     
