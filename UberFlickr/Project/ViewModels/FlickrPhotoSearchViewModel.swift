@@ -46,6 +46,7 @@ class FlickrPhotoSearchViewModel: FlickrPhotoSearchViewModelProtocol {
     
     func searchFlickr(_ query: String) {
         searchText = query
+        dataSource.value.removeAll()
         if query.count >= Constants.kMinCharsToSearch {
             searchWithDelay()
         }

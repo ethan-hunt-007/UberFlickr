@@ -48,6 +48,9 @@ class FlickrPhotoSearchViewController: UIViewController {
     func bindViewsToModel() {
         viewModel.dataSource.bind { [weak self](_) in
             guard let strongSelf = self else { return }
+            if strongSelf.refreshControl.isRefreshing {
+                strongSelf.refreshControl.endRefreshing()
+            }
             strongSelf.collectionView.reloadData()
         }
     }
