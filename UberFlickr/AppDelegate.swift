@@ -13,10 +13,15 @@ import JJRemoteImage
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var assembly: UberFlickrAssembly!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        window = UIWindow()
+        window?.makeKeyAndVisible()
+        assembly = UberFlickrAssembly()
+        let rootNavigationController = UINavigationController(rootViewController: assembly.resolveFlickrPhotoSearchViewController())
+        window?.rootViewController = rootNavigationController
         return true
     }
 

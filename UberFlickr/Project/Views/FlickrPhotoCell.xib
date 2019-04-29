@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="tek-3K-gr1" customClass="FlickrPhotoCell" customModule="UberFlickr" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="188" height="159"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                <rect key="frame" x="0.0" y="0.0" width="188" height="159"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ae5-AX-YIM">
+                        <rect key="frame" x="0.0" y="0.0" width="188" height="159"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PHa-wW-wrP">
+                                <rect key="frame" x="0.0" y="0.0" width="188" height="159"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="PHa-wW-wrP" firstAttribute="top" secondItem="ae5-AX-YIM" secondAttribute="top" id="59R-2p-2GF"/>
+                            <constraint firstAttribute="bottom" secondItem="PHa-wW-wrP" secondAttribute="bottom" id="9fK-Wy-vNi"/>
+                            <constraint firstItem="PHa-wW-wrP" firstAttribute="leading" secondItem="ae5-AX-YIM" secondAttribute="leading" id="wi8-as-EyQ"/>
+                            <constraint firstAttribute="trailing" secondItem="PHa-wW-wrP" secondAttribute="trailing" id="xbl-2x-E0Q"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="ae5-AX-YIM" secondAttribute="bottom" id="4ik-TZ-PLD"/>
+                <constraint firstAttribute="trailing" secondItem="ae5-AX-YIM" secondAttribute="trailing" id="CDs-ue-KXq"/>
+                <constraint firstItem="ae5-AX-YIM" firstAttribute="top" secondItem="tek-3K-gr1" secondAttribute="top" id="HwR-2Y-fRU"/>
+                <constraint firstItem="ae5-AX-YIM" firstAttribute="leading" secondItem="tek-3K-gr1" secondAttribute="leading" id="fcf-Zj-zzt"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="0lv-K1-7Zm"/>
+            <size key="customSize" width="188" height="159"/>
+            <connections>
+                <outlet property="imageView" destination="PHa-wW-wrP" id="bHO-QR-3zN"/>
+            </connections>
+            <point key="canvasLocation" x="19.199999999999999" y="77.811094452773617"/>
+        </collectionViewCell>
+    </objects>
+</document>

@@ -11,11 +11,11 @@ import Foundation
 typealias FlickrSearchResult = UberResult<(PhotosModel, PaginationModel)>
 typealias FlickrSearchCompletion = ((FlickrSearchResult) -> Void)
 
-protocol UberFlickrSearchProtocol {
+protocol UberFlickrSearchOperationProtocol {
     func fetchResults(for query: String, page: Int, completion: @escaping FlickrSearchCompletion)
 }
 
-class UberFlickrSearch: UberFlickrSearchProtocol {
+class UberFlickrSearchOperation: UberFlickrSearchOperationProtocol {
     struct Search {
         static let API_KEY: String = "3e7cc266ae2b0e0d78e279ce8e361736"
         static let DOMAIN: String = "UberFlickrSearch"
@@ -46,8 +46,17 @@ class UberFlickrSearch: UberFlickrSearchProtocol {
                 let _data: Data = try JSONSerialization.data(withJSONObject: photos)
                 let result = try JSONDecoder().decode(PhotosModel.self, from: _data)
                 result.searchTerm = query
-                let paginationModel = PaginationModel(nextPage: result.currentPage+1,
+                var paginationModel: PaginationModel
+                if result.currentPage < result.totalPages {
+                    paginationModel = PaginationModel(nextPage: result.currentPage+1,
                                                       totalPages: result.totalPages)
+                } else {
+                    paginationModel = PaginationModel(nextPage: result.currentPage,
+                                                      totalPages: result.totalPages)
+                    if result.currentPage > result.totalPages {
+                        result.photos = []
+                    }
+                }
                 DispatchQueue.main.async {
                     completion(.Success((result, paginationModel)))
                 }

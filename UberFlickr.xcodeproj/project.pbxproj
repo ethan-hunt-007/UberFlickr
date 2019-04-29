@@ -25,6 +25,14 @@
 		7FF7F9EA2277034900DB4C34 /* UberFlickrSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF7F9E92277034900DB4C34 /* UberFlickrSearch.swift */; };
 		7FF7F9EC2277040C00DB4C34 /* UberResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF7F9EB2277040C00DB4C34 /* UberResult.swift */; };
 		7FF7F9F02277053F00DB4C34 /* PaginationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF7F9EF2277053F00DB4C34 /* PaginationModel.swift */; };
+		7FF7F9F222773D3B00DB4C34 /* FlickrPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FF7F9F122773D3B00DB4C34 /* FlickrPhotoCell.xib */; };
+		7FF7F9F422773DAA00DB4C34 /* FlickrPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF7F9F322773DAA00DB4C34 /* FlickrPhotoCell.swift */; };
+		7FF7F9F722773E6B00DB4C34 /* FlickrPhotoSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF7F9F522773E6B00DB4C34 /* FlickrPhotoSearchViewController.swift */; };
+		7FF7F9F822773E6B00DB4C34 /* FlickrPhotoSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FF7F9F622773E6B00DB4C34 /* FlickrPhotoSearchViewController.xib */; };
+		7FF7F9FA2277443A00DB4C34 /* FlickrPhotoSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF7F9F92277443A00DB4C34 /* FlickrPhotoSearchViewModel.swift */; };
+		7FF7F9FC2277799000DB4C34 /* UberFlickrPhotoComponentAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF7F9FB2277799000DB4C34 /* UberFlickrPhotoComponentAssembler.swift */; };
+		7FF7F9FE227779A800DB4C34 /* UberFlickrAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF7F9FD227779A800DB4C34 /* UberFlickrAssembly.swift */; };
+		7FF7FA0022777B1E00DB4C34 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF7F9FF22777B1E00DB4C34 /* UIViewController+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +81,14 @@
 		7FF7F9E92277034900DB4C34 /* UberFlickrSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UberFlickrSearch.swift; sourceTree = "<group>"; };
 		7FF7F9EB2277040C00DB4C34 /* UberResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UberResult.swift; sourceTree = "<group>"; };
 		7FF7F9EF2277053F00DB4C34 /* PaginationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginationModel.swift; sourceTree = "<group>"; };
+		7FF7F9F122773D3B00DB4C34 /* FlickrPhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlickrPhotoCell.xib; sourceTree = "<group>"; };
+		7FF7F9F322773DAA00DB4C34 /* FlickrPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrPhotoCell.swift; sourceTree = "<group>"; };
+		7FF7F9F522773E6B00DB4C34 /* FlickrPhotoSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrPhotoSearchViewController.swift; sourceTree = "<group>"; };
+		7FF7F9F622773E6B00DB4C34 /* FlickrPhotoSearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlickrPhotoSearchViewController.xib; sourceTree = "<group>"; };
+		7FF7F9F92277443A00DB4C34 /* FlickrPhotoSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrPhotoSearchViewModel.swift; sourceTree = "<group>"; };
+		7FF7F9FB2277799000DB4C34 /* UberFlickrPhotoComponentAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UberFlickrPhotoComponentAssembler.swift; sourceTree = "<group>"; };
+		7FF7F9FD227779A800DB4C34 /* UberFlickrAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UberFlickrAssembly.swift; sourceTree = "<group>"; };
+		7FF7F9FF22777B1E00DB4C34 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +134,6 @@
 		7FF7F98F2276C9E000DB4C34 /* UberFlickr */ = {
 			isa = PBXGroup;
 			children = (
-				7FF7F9E8227702C300DB4C34 /* UberFlickrSearch */,
 				7FF7F9E32276E7AF00DB4C34 /* Models */,
 				7FF7F9E02276E78B00DB4C34 /* Helpers */,
 				7FF7F9DA2276E49600DB4C34 /* Assemblers */,
@@ -166,6 +181,8 @@
 		7FF7F9D32276E40700DB4C34 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				7FF7F9F522773E6B00DB4C34 /* FlickrPhotoSearchViewController.swift */,
+				7FF7F9F622773E6B00DB4C34 /* FlickrPhotoSearchViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -173,6 +190,7 @@
 		7FF7F9D42276E41000DB4C34 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				7FF7F9F92277443A00DB4C34 /* FlickrPhotoSearchViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -180,6 +198,7 @@
 		7FF7F9D52276E41F00DB4C34 /* Operations */ = {
 			isa = PBXGroup;
 			children = (
+				7FF7F9E92277034900DB4C34 /* UberFlickrSearch.swift */,
 			);
 			path = Operations;
 			sourceTree = "<group>";
@@ -189,6 +208,7 @@
 			children = (
 				7FF7F9DC2276E6F000DB4C34 /* UIView+Extensions.swift */,
 				7FF7F9DE2276E70A00DB4C34 /* UICollectionView+Extensions.swift */,
+				7FF7F9FF22777B1E00DB4C34 /* UIViewController+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -204,6 +224,8 @@
 		7FF7F9DA2276E49600DB4C34 /* Assemblers */ = {
 			isa = PBXGroup;
 			children = (
+				7FF7F9FB2277799000DB4C34 /* UberFlickrPhotoComponentAssembler.swift */,
+				7FF7F9FD227779A800DB4C34 /* UberFlickrAssembly.swift */,
 			);
 			path = Assemblers;
 			sourceTree = "<group>";
@@ -211,6 +233,8 @@
 		7FF7F9DB2276E4A400DB4C34 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7FF7F9F122773D3B00DB4C34 /* FlickrPhotoCell.xib */,
+				7FF7F9F322773DAA00DB4C34 /* FlickrPhotoCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -232,14 +256,6 @@
 				7FF7F9EF2277053F00DB4C34 /* PaginationModel.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		7FF7F9E8227702C300DB4C34 /* UberFlickrSearch */ = {
-			isa = PBXGroup;
-			children = (
-				7FF7F9E92277034900DB4C34 /* UberFlickrSearch.swift */,
-			);
-			path = UberFlickrSearch;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,8 +341,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				7FF7F99B2276C9E000DB4C34 /* LaunchScreen.storyboard in Resources */,
+				7FF7F9F222773D3B00DB4C34 /* FlickrPhotoCell.xib in Resources */,
 				7FF7F9982276C9E000DB4C34 /* Assets.xcassets in Resources */,
 				7FF7F9962276C9E000DB4C34 /* Main.storyboard in Resources */,
+				7FF7F9F822773E6B00DB4C34 /* FlickrPhotoSearchViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,12 +366,18 @@
 				7FF7F9D92276E48800DB4C34 /* ObjectManager.swift in Sources */,
 				7FF7F9E7227701DE00DB4C34 /* PhotosModel.swift in Sources */,
 				7FF7F9932276C9E000DB4C34 /* ViewController.swift in Sources */,
+				7FF7F9FA2277443A00DB4C34 /* FlickrPhotoSearchViewModel.swift in Sources */,
+				7FF7FA0022777B1E00DB4C34 /* UIViewController+Extensions.swift in Sources */,
 				7FF7F9F02277053F00DB4C34 /* PaginationModel.swift in Sources */,
+				7FF7F9F422773DAA00DB4C34 /* FlickrPhotoCell.swift in Sources */,
 				7FF7F9EC2277040C00DB4C34 /* UberResult.swift in Sources */,
 				7FF7F9DF2276E70A00DB4C34 /* UICollectionView+Extensions.swift in Sources */,
 				7FF7F9DD2276E6F000DB4C34 /* UIView+Extensions.swift in Sources */,
+				7FF7F9FC2277799000DB4C34 /* UberFlickrPhotoComponentAssembler.swift in Sources */,
 				7FF7F9E52276E90300DB4C34 /* UberFlickrPhoto.swift in Sources */,
+				7FF7F9FE227779A800DB4C34 /* UberFlickrAssembly.swift in Sources */,
 				7FF7F9912276C9E000DB4C34 /* AppDelegate.swift in Sources */,
+				7FF7F9F722773E6B00DB4C34 /* FlickrPhotoSearchViewController.swift in Sources */,
 				7FF7F9EA2277034900DB4C34 /* UberFlickrSearch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

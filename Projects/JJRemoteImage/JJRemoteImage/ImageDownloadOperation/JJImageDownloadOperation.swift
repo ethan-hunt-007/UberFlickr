@@ -70,11 +70,15 @@ class JJImageDownloadOperation: Operation {
     }
     
     func downloadImage() {
-        let downloadTask = URLSession.shared.downloadTask(with: self.imageUrl) { (downloadPath, response, error) in
+        let downloadTask = URLSession.shared.dataTask(with: self.imageUrl) { (data, response, error) in
             if
-                let _downloadPath = downloadPath,
-                let data = try? Data(contentsOf: _downloadPath) {
-                    let image = UIImage(data: data)
+                let _data = data,
+                error == nil,
+                let httpResponse = response as? HTTPURLResponse,
+                httpResponse.statusCode == 200,
+                let mimeType = response?.mimeType,
+                mimeType.hasPrefix("image") {
+                    let image = UIImage(data: _data)
                     self.completionHandler?(image, self.imageUrl, self.indexPath, error)
             }
             self.finish(true)

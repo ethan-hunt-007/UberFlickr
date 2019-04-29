@@ -22,7 +22,7 @@ class UberFlickrPhoto: Codable {
     }
     
     var imageUrl: URL? {
-        if let _url: URL = URL(string: String(format: "http://farm%d.static.flickr.com/%@/%@_%@.jpg", farm, server, photoId, secret)) {
+        if let _url: URL = URL(string: String(format: "https://farm%d.static.flickr.com/%@/%@_%@.jpg", farm, server, photoId, secret)) {
             return _url
         }
         return nil
