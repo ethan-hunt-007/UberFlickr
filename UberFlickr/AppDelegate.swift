@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import JJRemoteImage
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

@@ -13,6 +13,9 @@
 		7FF7F9982276C9E000DB4C34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FF7F9972276C9E000DB4C34 /* Assets.xcassets */; };
 		7FF7F99B2276C9E000DB4C34 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FF7F9992276C9E000DB4C34 /* LaunchScreen.storyboard */; };
 		7FF7F9A62276C9E000DB4C34 /* UberFlickrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF7F9A52276C9E000DB4C34 /* UberFlickrTests.swift */; };
+		7FF7F9C72276CA6500DB4C34 /* JJRemoteImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FF7F9C62276CA6500DB4C34 /* JJRemoteImage.framework */; };
+		7FF7F9C92276CA7D00DB4C34 /* JJRemoteImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FF7F9C82276CA7D00DB4C34 /* JJRemoteImage.framework */; };
+		7FF7F9CA2276CA7D00DB4C34 /* JJRemoteImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7FF7F9C82276CA7D00DB4C34 /* JJRemoteImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,6 +28,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		7FF7F9CB2276CA7E00DB4C34 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7FF7F9CA2276CA7D00DB4C34 /* JJRemoteImage.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		7FF7F98D2276C9E000DB4C34 /* UberFlickr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UberFlickr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FF7F9902276C9E000DB4C34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +53,8 @@
 		7FF7F9A12276C9E000DB4C34 /* UberFlickrTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UberFlickrTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FF7F9A52276C9E000DB4C34 /* UberFlickrTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UberFlickrTests.swift; sourceTree = "<group>"; };
 		7FF7F9A72276C9E100DB4C34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7FF7F9C62276CA6500DB4C34 /* JJRemoteImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = JJRemoteImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FF7F9C82276CA7D00DB4C34 /* JJRemoteImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = JJRemoteImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +62,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FF7F9C92276CA7D00DB4C34 /* JJRemoteImage.framework in Frameworks */,
+				7FF7F9C72276CA6500DB4C34 /* JJRemoteImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,9 +80,11 @@
 		7FF7F9842276C9DF00DB4C34 = {
 			isa = PBXGroup;
 			children = (
+				7FF7F9C82276CA7D00DB4C34 /* JJRemoteImage.framework */,
 				7FF7F98F2276C9E000DB4C34 /* UberFlickr */,
 				7FF7F9A42276C9E000DB4C34 /* UberFlickrTests */,
 				7FF7F98E2276C9E000DB4C34 /* Products */,
+				7FF7F9C52276CA6500DB4C34 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +119,14 @@
 			path = UberFlickrTests;
 			sourceTree = "<group>";
 		};
+		7FF7F9C52276CA6500DB4C34 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7FF7F9C62276CA6500DB4C34 /* JJRemoteImage.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,6 +137,7 @@
 				7FF7F9892276C9E000DB4C34 /* Sources */,
 				7FF7F98A2276C9E000DB4C34 /* Frameworks */,
 				7FF7F98B2276C9E000DB4C34 /* Resources */,
+				7FF7F9CB2276CA7E00DB4C34 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
