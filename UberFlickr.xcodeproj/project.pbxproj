@@ -16,6 +16,15 @@
 		7FF7F9C72276CA6500DB4C34 /* JJRemoteImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FF7F9C62276CA6500DB4C34 /* JJRemoteImage.framework */; };
 		7FF7F9C92276CA7D00DB4C34 /* JJRemoteImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FF7F9C82276CA7D00DB4C34 /* JJRemoteImage.framework */; };
 		7FF7F9CA2276CA7D00DB4C34 /* JJRemoteImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7FF7F9C82276CA7D00DB4C34 /* JJRemoteImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7FF7F9D92276E48800DB4C34 /* ObjectManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF7F9D82276E48800DB4C34 /* ObjectManager.swift */; };
+		7FF7F9DD2276E6F000DB4C34 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF7F9DC2276E6F000DB4C34 /* UIView+Extensions.swift */; };
+		7FF7F9DF2276E70A00DB4C34 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF7F9DE2276E70A00DB4C34 /* UICollectionView+Extensions.swift */; };
+		7FF7F9E22276E79900DB4C34 /* PropertyBinders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF7F9E12276E79900DB4C34 /* PropertyBinders.swift */; };
+		7FF7F9E52276E90300DB4C34 /* UberFlickrPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF7F9E42276E90300DB4C34 /* UberFlickrPhoto.swift */; };
+		7FF7F9E7227701DE00DB4C34 /* PhotosModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF7F9E6227701DE00DB4C34 /* PhotosModel.swift */; };
+		7FF7F9EA2277034900DB4C34 /* UberFlickrSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF7F9E92277034900DB4C34 /* UberFlickrSearch.swift */; };
+		7FF7F9EC2277040C00DB4C34 /* UberResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF7F9EB2277040C00DB4C34 /* UberResult.swift */; };
+		7FF7F9F02277053F00DB4C34 /* PaginationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF7F9EF2277053F00DB4C34 /* PaginationModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +64,15 @@
 		7FF7F9A72276C9E100DB4C34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7FF7F9C62276CA6500DB4C34 /* JJRemoteImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = JJRemoteImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FF7F9C82276CA7D00DB4C34 /* JJRemoteImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = JJRemoteImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FF7F9D82276E48800DB4C34 /* ObjectManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectManager.swift; sourceTree = "<group>"; };
+		7FF7F9DC2276E6F000DB4C34 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		7FF7F9DE2276E70A00DB4C34 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
+		7FF7F9E12276E79900DB4C34 /* PropertyBinders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyBinders.swift; sourceTree = "<group>"; };
+		7FF7F9E42276E90300DB4C34 /* UberFlickrPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UberFlickrPhoto.swift; sourceTree = "<group>"; };
+		7FF7F9E6227701DE00DB4C34 /* PhotosModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosModel.swift; sourceTree = "<group>"; };
+		7FF7F9E92277034900DB4C34 /* UberFlickrSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UberFlickrSearch.swift; sourceTree = "<group>"; };
+		7FF7F9EB2277040C00DB4C34 /* UberResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UberResult.swift; sourceTree = "<group>"; };
+		7FF7F9EF2277053F00DB4C34 /* PaginationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginationModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +118,13 @@
 		7FF7F98F2276C9E000DB4C34 /* UberFlickr */ = {
 			isa = PBXGroup;
 			children = (
+				7FF7F9E8227702C300DB4C34 /* UberFlickrSearch */,
+				7FF7F9E32276E7AF00DB4C34 /* Models */,
+				7FF7F9E02276E78B00DB4C34 /* Helpers */,
+				7FF7F9DA2276E49600DB4C34 /* Assemblers */,
+				7FF7F9D72276E47300DB4C34 /* Networker */,
+				7FF7F9D62276E43400DB4C34 /* Extensions */,
+				7FF7F9D22276E3FD00DB4C34 /* Project */,
 				7FF7F9902276C9E000DB4C34 /* AppDelegate.swift */,
 				7FF7F9922276C9E000DB4C34 /* ViewController.swift */,
 				7FF7F9942276C9E000DB4C34 /* Main.storyboard */,
@@ -125,6 +150,96 @@
 				7FF7F9C62276CA6500DB4C34 /* JJRemoteImage.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7FF7F9D22276E3FD00DB4C34 /* Project */ = {
+			isa = PBXGroup;
+			children = (
+				7FF7F9DB2276E4A400DB4C34 /* Views */,
+				7FF7F9D52276E41F00DB4C34 /* Operations */,
+				7FF7F9D42276E41000DB4C34 /* ViewModels */,
+				7FF7F9D32276E40700DB4C34 /* ViewControllers */,
+			);
+			path = Project;
+			sourceTree = "<group>";
+		};
+		7FF7F9D32276E40700DB4C34 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		7FF7F9D42276E41000DB4C34 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		7FF7F9D52276E41F00DB4C34 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
+		7FF7F9D62276E43400DB4C34 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7FF7F9DC2276E6F000DB4C34 /* UIView+Extensions.swift */,
+				7FF7F9DE2276E70A00DB4C34 /* UICollectionView+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7FF7F9D72276E47300DB4C34 /* Networker */ = {
+			isa = PBXGroup;
+			children = (
+				7FF7F9D82276E48800DB4C34 /* ObjectManager.swift */,
+			);
+			path = Networker;
+			sourceTree = "<group>";
+		};
+		7FF7F9DA2276E49600DB4C34 /* Assemblers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Assemblers;
+			sourceTree = "<group>";
+		};
+		7FF7F9DB2276E4A400DB4C34 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7FF7F9E02276E78B00DB4C34 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7FF7F9E12276E79900DB4C34 /* PropertyBinders.swift */,
+				7FF7F9EB2277040C00DB4C34 /* UberResult.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		7FF7F9E32276E7AF00DB4C34 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7FF7F9E42276E90300DB4C34 /* UberFlickrPhoto.swift */,
+				7FF7F9E6227701DE00DB4C34 /* PhotosModel.swift */,
+				7FF7F9EF2277053F00DB4C34 /* PaginationModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7FF7F9E8227702C300DB4C34 /* UberFlickrSearch */ = {
+			isa = PBXGroup;
+			children = (
+				7FF7F9E92277034900DB4C34 /* UberFlickrSearch.swift */,
+			);
+			path = UberFlickrSearch;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,8 +344,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FF7F9E22276E79900DB4C34 /* PropertyBinders.swift in Sources */,
+				7FF7F9D92276E48800DB4C34 /* ObjectManager.swift in Sources */,
+				7FF7F9E7227701DE00DB4C34 /* PhotosModel.swift in Sources */,
 				7FF7F9932276C9E000DB4C34 /* ViewController.swift in Sources */,
+				7FF7F9F02277053F00DB4C34 /* PaginationModel.swift in Sources */,
+				7FF7F9EC2277040C00DB4C34 /* UberResult.swift in Sources */,
+				7FF7F9DF2276E70A00DB4C34 /* UICollectionView+Extensions.swift in Sources */,
+				7FF7F9DD2276E6F000DB4C34 /* UIView+Extensions.swift in Sources */,
+				7FF7F9E52276E90300DB4C34 /* UberFlickrPhoto.swift in Sources */,
 				7FF7F9912276C9E000DB4C34 /* AppDelegate.swift in Sources */,
+				7FF7F9EA2277034900DB4C34 /* UberFlickrSearch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -33,7 +33,9 @@ public class JJRemoteImageManager: JJRemoteImageManagerProtocol {
                               completion: @escaping ImageCompletionHandler) {
         guard let _url = url else { return }
         if let cachedImage = imageCache.object(forKey: _url.absoluteString as NSString) {
-            completion(cachedImage, _url, indexPath, nil)
+            DispatchQueue.main.async {
+                completion(cachedImage, _url, indexPath, nil)
+            }
         } else {
             if let operations = (imageDownloadQueue.operations as? [JJImageDownloadOperation])?.filter({$0.imageUrl.absoluteString == _url.absoluteString && $0.isFinished == false && $0.isExecuting == true }),
                 let operation = operations.first {
@@ -47,7 +49,9 @@ public class JJRemoteImageManager: JJRemoteImageManagerProtocol {
                     if let newImage = image {
                         self.imageCache.setObject(newImage, forKey: url.absoluteString as NSString)
                     }
-                    completion(image, url, indexPath, error)
+                    DispatchQueue.main.async {
+                        completion(image, url, indexPath, error)
+                    }
                 }
                 imageDownloadQueue.addOperation(operation)
             }
