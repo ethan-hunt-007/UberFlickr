@@ -120,6 +120,17 @@ extension UIView {
             self.topAnchor.constraint(equalTo: view.bottomAnchor, constant: constant)
             ])
     }
+    func centerVertically(to view: UIView) {
+        NSLayoutConstraint.activate([
+            view.centerYAnchor.constraint(equalTo: self.centerYAnchor)
+            ])
+    }
+    
+    func centerHorizontally(to view: UIView) {
+        NSLayoutConstraint.activate([
+            view.centerXAnchor.constraint(equalTo: self.centerXAnchor)
+            ])
+    }
     func fixHeight(to height: CGFloat) {
         NSLayoutConstraint.activate([
             self.heightAnchor.constraint(equalToConstant: height)

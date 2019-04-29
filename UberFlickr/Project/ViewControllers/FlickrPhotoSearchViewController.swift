@@ -21,6 +21,7 @@ class FlickrPhotoSearchViewController: UIViewController {
             collectionView.delegate = self
             collectionView.dataSource = self
             collectionView.register(nibType: FlickrPhotoCell.self)
+            collectionView.register(cellType: CollectionViewFooterView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter)
         }
     }
     
@@ -36,6 +37,7 @@ class FlickrPhotoSearchViewController: UIViewController {
     struct Constants {
         static let kItemInRow: CGFloat = 3
         static let kCollectionViewInsets: UIEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        static let kFooterViewHeight: CGFloat = 50
     }
     
     override func viewDidLoad() {
@@ -68,7 +70,6 @@ class FlickrPhotoSearchViewController: UIViewController {
 //MARK:- UICollectionViewDelegate methods
 extension FlickrPhotoSearchViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        print("--- displaying cell number = \(indexPath.item)")
         if viewModel.numberOfItems(in: indexPath.section)-1 == indexPath.item && viewModel.shouldFetchNextPage() {
             viewModel.fetchNextPage()
         }
@@ -105,9 +106,28 @@ extension FlickrPhotoSearchViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        print("--- cell number = \(indexPath.item)")
         let cell = collectionView.dequeue(cell: FlickrPhotoCell.self, for: indexPath)!
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if kind == UICollectionView.elementKindSectionFooter {
+            let footerView = collectionView.dequeue(supplementaryView: CollectionViewFooterView.self, ofKind: UICollectionView.elementKindSectionFooter, for: indexPath)!
+            return footerView
+        }
+        return UICollectionReusableView()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        guard viewModel.searchText.count > 2 else {
+            return CGSize.zero
+        }
+        if viewModel.numberOfItems(in: 0) == 0 {
+            return collectionView.bounds.size
+        } else if viewModel.loadMore {
+            return CGSize(width: collectionView.bounds.size.width, height: Constants.kFooterViewHeight)
+        }
+        return CGSize.zero
     }
 }
 

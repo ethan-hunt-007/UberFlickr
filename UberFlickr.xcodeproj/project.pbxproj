@@ -33,6 +33,7 @@
 		7FF7F9FC2277799000DB4C34 /* UberFlickrPhotoComponentAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF7F9FB2277799000DB4C34 /* UberFlickrPhotoComponentAssembler.swift */; };
 		7FF7F9FE227779A800DB4C34 /* UberFlickrAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF7F9FD227779A800DB4C34 /* UberFlickrAssembly.swift */; };
 		7FF7FA0022777B1E00DB4C34 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF7F9FF22777B1E00DB4C34 /* UIViewController+Extensions.swift */; };
+		7FF7FA0222778B6500DB4C34 /* CollectionViewFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF7FA0122778B6500DB4C34 /* CollectionViewFooterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		7FF7F9FB2277799000DB4C34 /* UberFlickrPhotoComponentAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UberFlickrPhotoComponentAssembler.swift; sourceTree = "<group>"; };
 		7FF7F9FD227779A800DB4C34 /* UberFlickrAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UberFlickrAssembly.swift; sourceTree = "<group>"; };
 		7FF7F9FF22777B1E00DB4C34 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		7FF7FA0122778B6500DB4C34 /* CollectionViewFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewFooterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,6 +237,7 @@
 			children = (
 				7FF7F9F122773D3B00DB4C34 /* FlickrPhotoCell.xib */,
 				7FF7F9F322773DAA00DB4C34 /* FlickrPhotoCell.swift */,
+				7FF7FA0122778B6500DB4C34 /* CollectionViewFooterView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 				7FF7F9DF2276E70A00DB4C34 /* UICollectionView+Extensions.swift in Sources */,
 				7FF7F9DD2276E6F000DB4C34 /* UIView+Extensions.swift in Sources */,
 				7FF7F9FC2277799000DB4C34 /* UberFlickrPhotoComponentAssembler.swift in Sources */,
+				7FF7FA0222778B6500DB4C34 /* CollectionViewFooterView.swift in Sources */,
 				7FF7F9E52276E90300DB4C34 /* UberFlickrPhoto.swift in Sources */,
 				7FF7F9FE227779A800DB4C34 /* UberFlickrAssembly.swift in Sources */,
 				7FF7F9912276C9E000DB4C34 /* AppDelegate.swift in Sources */,
