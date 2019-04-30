@@ -28,7 +28,7 @@ class FlickrPhotoSearchViewController: UIViewController {
     var viewModel: FlickrPhotoSearchViewModelProtocol!
     var sharedRemoteImageManager: JJRemoteImageManagerProtocol! {
         didSet {
-            sharedRemoteImageManager.setCacheLimit(200)
+            sharedRemoteImageManager.setCacheLimit(500)
         }
     }
     
@@ -139,6 +139,10 @@ extension FlickrPhotoSearchViewController: UICollectionViewDataSource {
 extension FlickrPhotoSearchViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         viewModel.searchFlickr(searchText)
+    }
+
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
     }
 }
 
