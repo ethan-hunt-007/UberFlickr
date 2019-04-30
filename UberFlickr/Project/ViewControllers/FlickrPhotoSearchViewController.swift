@@ -26,7 +26,11 @@ class FlickrPhotoSearchViewController: UIViewController {
     }
     
     var viewModel: FlickrPhotoSearchViewModelProtocol!
-    var sharedRemoteImageManager: JJRemoteImageManagerProtocol!
+    var sharedRemoteImageManager: JJRemoteImageManagerProtocol! {
+        didSet {
+            sharedRemoteImageManager.setCacheLimit(200)
+        }
+    }
     
     lazy var refreshControl: UIRefreshControl = {
         let refresControl = UIRefreshControl()

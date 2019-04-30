@@ -12,6 +12,7 @@ public protocol JJRemoteImageManagerProtocol {
     func downloadImage(_ url: URL?, indexPath: IndexPath?, completion: @escaping ImageCompletionHandler)
     func slowDownImageDownloadTask(for url: URL?)
     func cancellAllDownloadTasks()
+    func setCacheLimit(_ limit: Int)
 }
 
 public class JJRemoteImageManager: JJRemoteImageManagerProtocol {
@@ -70,5 +71,9 @@ public class JJRemoteImageManager: JJRemoteImageManagerProtocol {
     
     public func cancellAllDownloadTasks() {
         imageDownloadQueue.cancelAllOperations()
+    }
+    
+    public func setCacheLimit(_ limit: Int) {
+        imageCache.countLimit = limit
     }
 }
