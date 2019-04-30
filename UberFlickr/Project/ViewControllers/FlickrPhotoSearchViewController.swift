@@ -167,3 +167,9 @@ extension FlickrPhotoSearchViewController: UICollectionViewDelegateFlowLayout {
         return Constants.kCollectionViewInsets.right
     }
 }
+
+extension FlickrPhotoSearchViewController {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        searchBar.resignFirstResponder()
+    }
+}
