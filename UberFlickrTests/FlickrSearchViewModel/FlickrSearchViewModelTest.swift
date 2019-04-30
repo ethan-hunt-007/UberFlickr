@@ -44,6 +44,7 @@ class FlickrSearchViewModelTest: XCTestCase {
         viewModel.search(viewModel.searchText)
         XCTAssertTrue(operation.isFetchResultsCalled)
         XCTAssert(viewModel.dataSource.value.count == stubFlickrPhotos().count)
+        XCTAssert(viewModel.dataSource.value == stubFlickrPhotos())
         viewModel.search("birds")
         XCTAssert(viewModel.dataSource.value.count == stubFlickrPhotos().count * 2)
         viewModel.search("birds")
