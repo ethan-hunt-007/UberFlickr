@@ -8,7 +8,7 @@
 
 import Foundation
 
-class UberFlickrPhoto: Codable {
+struct UberFlickrPhoto: Codable, Equatable {
     var photoId: String
     var server: String
     var farm: Int
@@ -26,5 +26,13 @@ class UberFlickrPhoto: Codable {
             return _url
         }
         return nil
+    }
+    
+    //Incorporated to write unit tests
+    static func ==(lhs: UberFlickrPhoto, rhs: UberFlickrPhoto) -> Bool {
+        return lhs.photoId == rhs.photoId
+            && lhs.server == rhs.server
+            && lhs.farm == rhs.farm
+            && lhs.secret == rhs.secret
     }
 }

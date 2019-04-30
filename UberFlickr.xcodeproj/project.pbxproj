@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F5DD7F122782D8500040B6A /* MockUberFlickrSearchOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5DD7F022782D8500040B6A /* MockUberFlickrSearchOperation.swift */; };
+		7F5DD7F422789F7D00040B6A /* FlickrSearchViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5DD7F322789F7D00040B6A /* FlickrSearchViewModelTest.swift */; };
+		7F5DD7F72278A04000040B6A /* MockRemoteImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5DD7F62278A04000040B6A /* MockRemoteImageManager.swift */; };
 		7FF7F9912276C9E000DB4C34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF7F9902276C9E000DB4C34 /* AppDelegate.swift */; };
 		7FF7F9932276C9E000DB4C34 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF7F9922276C9E000DB4C34 /* ViewController.swift */; };
 		7FF7F9962276C9E000DB4C34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FF7F9942276C9E000DB4C34 /* Main.storyboard */; };
@@ -61,6 +64,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7F5DD7F022782D8500040B6A /* MockUberFlickrSearchOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUberFlickrSearchOperation.swift; sourceTree = "<group>"; };
+		7F5DD7F322789F7D00040B6A /* FlickrSearchViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrSearchViewModelTest.swift; sourceTree = "<group>"; };
+		7F5DD7F62278A04000040B6A /* MockRemoteImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRemoteImageManager.swift; sourceTree = "<group>"; };
 		7FF7F98D2276C9E000DB4C34 /* UberFlickr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UberFlickr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FF7F9902276C9E000DB4C34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7FF7F9922276C9E000DB4C34 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +119,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7F5DD7EF22782D5C00040B6A /* UberFlickrSearchMockOperation */ = {
+			isa = PBXGroup;
+			children = (
+				7F5DD7F022782D8500040B6A /* MockUberFlickrSearchOperation.swift */,
+			);
+			path = UberFlickrSearchMockOperation;
+			sourceTree = "<group>";
+		};
+		7F5DD7F222789F4300040B6A /* FlickrSearchViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7F5DD7F322789F7D00040B6A /* FlickrSearchViewModelTest.swift */,
+			);
+			path = FlickrSearchViewModel;
+			sourceTree = "<group>";
+		};
+		7F5DD7F52278A02D00040B6A /* JJRemoteImageManagerMock */ = {
+			isa = PBXGroup;
+			children = (
+				7F5DD7F62278A04000040B6A /* MockRemoteImageManager.swift */,
+			);
+			path = JJRemoteImageManagerMock;
+			sourceTree = "<group>";
+		};
 		7FF7F9842276C9DF00DB4C34 = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +185,9 @@
 		7FF7F9A42276C9E000DB4C34 /* UberFlickrTests */ = {
 			isa = PBXGroup;
 			children = (
+				7F5DD7F52278A02D00040B6A /* JJRemoteImageManagerMock */,
+				7F5DD7F222789F4300040B6A /* FlickrSearchViewModel */,
+				7F5DD7EF22782D5C00040B6A /* UberFlickrSearchMockOperation */,
 				7FF7F9A52276C9E000DB4C34 /* UberFlickrTests.swift */,
 				7FF7F9A72276C9E100DB4C34 /* Info.plist */,
 			);
@@ -390,7 +423,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F5DD7F422789F7D00040B6A /* FlickrSearchViewModelTest.swift in Sources */,
+				7F5DD7F122782D8500040B6A /* MockUberFlickrSearchOperation.swift in Sources */,
 				7FF7F9A62276C9E000DB4C34 /* UberFlickrTests.swift in Sources */,
+				7F5DD7F72278A04000040B6A /* MockRemoteImageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

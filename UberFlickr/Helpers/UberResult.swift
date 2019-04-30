@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum UberResult<T> {
+public enum UberResult<T> {
     case Success(T)
     case Failure(Error)
 }

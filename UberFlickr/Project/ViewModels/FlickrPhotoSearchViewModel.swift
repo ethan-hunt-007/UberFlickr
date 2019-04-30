@@ -22,6 +22,7 @@ protocol FlickrPhotoSearchViewModelProtocol {
     func refresh()
     func fetchNextPage()
     func model(at indexPath: IndexPath) -> UberFlickrPhoto?
+    func search(_ query: String)
 }
 
 class FlickrPhotoSearchViewModel: FlickrPhotoSearchViewModelProtocol {
@@ -68,6 +69,25 @@ class FlickrPhotoSearchViewModel: FlickrPhotoSearchViewModelProtocol {
         return dataSource.value[indexPath.item]
     }
     
+    func search(_ query: String) {
+        flickSearchOperation.fetchResults(for: query,
+                                          page: paginationModel.nextPage) { [weak self](result) in
+                                            guard let strongSelf = self else { return }
+                                            strongSelf.cancelDownloadOperationsAndClearDataSource(page: strongSelf.paginationModel.nextPage)
+                                            switch result {
+                                            case .Success(let photosModel, let paginationModel):
+                                                guard photosModel.searchTerm == strongSelf.searchText else { return }
+                                                strongSelf.modifyDataSource(photosModel, for: paginationModel.nextPage)
+                                                if strongSelf.paginationModel == paginationModel {
+                                                    strongSelf.loadMore = false
+                                                }
+                                                strongSelf.paginationModel = paginationModel
+                                            case .Failure(_):
+                                                strongSelf.loadingPhotosFailed.value = true
+                                            }
+        }
+    }
+    
 }
 
 //MARK:- Private methods
@@ -94,25 +114,6 @@ extension FlickrPhotoSearchViewModel {
             else { return }
         resetVariables()
         search(_searchString)
-    }
-    
-    fileprivate func search(_ query: String) {
-        flickSearchOperation.fetchResults(for: query,
-                                          page: paginationModel.nextPage) { [weak self](result) in
-                                            guard let strongSelf = self else { return }
-                                            strongSelf.cancelDownloadOperationsAndClearDataSource(page: strongSelf.paginationModel.nextPage)
-                                            switch result {
-                                            case .Success(let photosModel, let paginationModel):
-                                                guard photosModel.searchTerm == strongSelf.searchText else { return }
-                                                strongSelf.modifyDataSource(photosModel, for: paginationModel.nextPage)
-                                                if strongSelf.paginationModel == paginationModel {
-                                                    strongSelf.loadMore = false
-                                                }
-                                                strongSelf.paginationModel = paginationModel
-                                            case .Failure(_):
-                                                strongSelf.loadingPhotosFailed.value = true
-                                            }
-        }
     }
     
     fileprivate func modifyDataSource(_ photosModel: PhotosModel, for page: Int) {

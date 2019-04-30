@@ -8,11 +8,25 @@
 
 import Foundation
 
-typealias FlickrSearchResult = UberResult<(PhotosModel, PaginationModel)>
-typealias FlickrSearchCompletion = ((FlickrSearchResult) -> Void)
+public typealias FlickrSearchResult = UberResult<(PhotosModel, PaginationModel)>
+public typealias FlickrSearchCompletion = ((FlickrSearchResult) -> Void)
 
-protocol UberFlickrSearchOperationProtocol {
+public protocol UberFlickrSearchOperationProtocol {
     func fetchResults(for query: String, page: Int, completion: @escaping FlickrSearchCompletion)
+    func searchURL(for query: String, page: Int, apiKey: String) -> URL?
+}
+
+extension UberFlickrSearchOperationProtocol {
+    public func searchURL(for query: String, page: Int, apiKey: String) -> URL? {
+        guard let searchTerm = query.addingPercentEncoding(withAllowedCharacters: CharacterSet.alphanumerics) else {
+            return nil
+        }
+        let urlString = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=\(apiKey)&format=json&nojsoncallback=1&safe_search=1&text=\(searchTerm)&page=\(page)"
+        if let _url = URL(string: urlString) {
+            return _url
+        }
+        return nil
+    }
 }
 
 class UberFlickrSearchOperation: UberFlickrSearchOperationProtocol {
@@ -28,7 +42,7 @@ class UberFlickrSearchOperation: UberFlickrSearchOperationProtocol {
     let searchError: NSError = NSError(domain: Search.DOMAIN, code: 0, userInfo: [NSLocalizedFailureReasonErrorKey: Constants.kSearchFailureMsg])
     
     func fetchResults(for query: String, page: Int, completion: @escaping FlickrSearchCompletion) {
-        guard let _searchUrl = searchURL(for: query, page: page) else {
+        guard let _searchUrl = searchURL(for: query, page: page, apiKey: Search.API_KEY) else {
             completion(.Failure(searchError))
             return
         }
@@ -44,7 +58,7 @@ class UberFlickrSearchOperation: UberFlickrSearchOperationProtocol {
             }
             do {
                 let _data: Data = try JSONSerialization.data(withJSONObject: photos)
-                let result = try JSONDecoder().decode(PhotosModel.self, from: _data)
+                var result = try JSONDecoder().decode(PhotosModel.self, from: _data)
                 result.searchTerm = query
                 var paginationModel: PaginationModel
                 if result.currentPage < result.totalPages {
@@ -66,16 +80,5 @@ class UberFlickrSearchOperation: UberFlickrSearchOperationProtocol {
                 }
             }
         }
-    }
-    
-    private func searchURL(for query: String, page: Int) -> URL? {
-        guard let searchTerm = query.addingPercentEncoding(withAllowedCharacters: CharacterSet.alphanumerics) else {
-            return nil
-        }
-        let urlString = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=\(Search.API_KEY)&format=json&nojsoncallback=1&safe_search=1&text=\(searchTerm)&page=\(page)"
-        if let _url = URL(string: urlString) {
-            return _url
-        }
-        return nil
     }
 }

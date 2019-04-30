@@ -8,7 +8,7 @@
 
 import Foundation
 
-class PhotosModel: Codable {
+public struct PhotosModel: Codable {
     var currentPage: Int
     var totalPages: Int
     var photos: [UberFlickrPhoto] = []

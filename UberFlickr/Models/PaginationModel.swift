@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct PaginationModel: Equatable {
+public struct PaginationModel: Equatable {
     var nextPage: Int
     var totalPages: Int
     
@@ -17,7 +17,7 @@ struct PaginationModel: Equatable {
         self.totalPages = totalPages
     }
     
-    static func ==(lhs: PaginationModel, rhs: PaginationModel) -> Bool {
+    public static func ==(lhs: PaginationModel, rhs: PaginationModel) -> Bool {
         return lhs.nextPage == rhs.nextPage && lhs.totalPages == rhs.totalPages
     }
 }
