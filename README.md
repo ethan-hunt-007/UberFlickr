@@ -6,7 +6,7 @@ To run the project
 2. select the build target as **UberFlickr** as there are others targets used as frameworks
 3. Run the selected target
 
-**Hacks**
+**Shortcuts**
 1. To save time, dataStores are ignored and instead operations are directly passed to viewModel.
 
 **Documentation**
